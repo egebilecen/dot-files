@@ -1,45 +1,28 @@
 -- LSP Config
 return {
-	"neovim/nvim-lspconfig",
-	config = function()
-		local caps = require("cmp_nvim_lsp").default_capabilities()
-		local lspconfig = require("lspconfig")
+    "neovim/nvim-lspconfig",
+    config = function()
+        local caps = require("cmp_nvim_lsp").default_capabilities()
+        local lspconfig = require("lspconfig")
 
-		lspconfig.clangd.setup({
-			capabilities = caps,
-		})
-		lspconfig.cssls.setup({
-			capabilities = caps,
-		})
-		lspconfig.dockerls.setup({
-			capabilities = caps,
-		})
-		lspconfig.docker_compose_language_service.setup({
-			capabilities = caps,
-		})
-		lspconfig.jsonls.setup({
-			capabilities = caps,
-		})
-		lspconfig.tsserver.setup({
-			capabilities = caps,
-		})
-		lspconfig.lua_ls.setup({
-			capabilities = caps,
-		})
-		lspconfig.autotools_ls.setup({
-			capabilities = caps,
-		})
-		lspconfig.intelephense.setup({
-			capabilities = caps,
-		})
-		lspconfig.pylsp.setup({
-			capabilities = caps,
-		})
-		lspconfig.rust_analyzer.setup({
-			capabilities = caps,
-		})
-		lspconfig.yamlls.setup({
-			capabilities = caps,
-		})
-	end,
+        local on_attach = function(client, bufnr) end
+
+        local common_config = {
+            capabilities = caps,
+            on_attach = on_attach,
+        }
+
+        lspconfig.clangd.setup(common_config)
+        lspconfig.cssls.setup(common_config)
+        lspconfig.dockerls.setup(common_config)
+        lspconfig.docker_compose_language_service.setup(common_config)
+        lspconfig.jsonls.setup(common_config)
+        lspconfig.tsserver.setup(common_config)
+        lspconfig.lua_ls.setup(common_config)
+        lspconfig.autotools_ls.setup(common_config)
+        lspconfig.intelephense.setup(common_config)
+        lspconfig.pylsp.setup(common_config)
+        lspconfig.rust_analyzer.setup(common_config)
+        lspconfig.yamlls.setup(common_config)
+    end,
 }
