@@ -13,9 +13,16 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
 vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
+vim.keymap.set("n", "<leader>f", vim.diagnostic.open_float, {})
+vim.keymap.set("n", "<leader>F", vim.diagnostic.setqflist, {})
+vim.keymap.set("n", "[f", vim.diagnostic.goto_prev, {})
+vim.keymap.set("n", "]f", vim.diagnostic.goto_next, {})
+
+if vim.lsp.inlay_hint then
+	vim.keymap.set("n", "<leader>ih", function()
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	end, {})
+end
 
 -- File Tree
 vim.keymap.set("n", "<leader>b", ":Neotree filesystem reveal left<CR>")
