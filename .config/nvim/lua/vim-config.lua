@@ -18,4 +18,6 @@ vim.cmd('nmap DD "_dd')
 -- vim.cmd("nmap <C-j> <C-w>j")
 -- vim.cmd("nmap <C-k> <C-w>k")
 -- vim.cmd("nmap <C-l> <C-w>l")
+-- Need to install "xclip" package.
+vim.cmd("set clipboard+=unnamedplus")
 vim.g.mapleader = " "
