@@ -29,11 +29,11 @@ local telescope = {
 vim.keymap.set("n", "<leader>p", telescope.builtin.find_files, {})
 
 ---- Need to install "ripgrep" packet for it to work. E.g. `apt install ripgrep`.
-vim.keymap.set("n", "<leader>gr", telescope.builtin.live_grep, {})
+vim.keymap.set("n", "<leader>g", telescope.builtin.live_grep, {})
 
--- Git Signs
-vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {})
-vim.keymap.set("n", "<leader>gg", ":Git ", {})
+-- Git
+vim.keymap.set("n", "<leader>vh", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>vg", ":Git ", {})
 
 -- DAP
 local dap = require("dap")
