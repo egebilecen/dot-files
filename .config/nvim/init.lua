@@ -1,3 +1,5 @@
+require("vim-config")
+
 -- Package Manager
 ---- Lazy NeoVim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,6 +18,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- End Package Manager
 
-require("vim-config")
 require("lazy").setup("plugins")
 require("keybinds")
