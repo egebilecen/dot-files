@@ -1,3 +1,12 @@
+-- Code Completion
+-- code-completion.lua
+--[[
+    <C-b> Scroll the docs down
+    <C-f> Scroll the docs up
+    <CR>  Confirm the selection
+    <TAB> Confirm the selection
+]]--
+
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -7,6 +16,8 @@ vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 vim.keymap.set({ "n", "v" }, "<C-Space>", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>f", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>F", vim.diagnostic.setqflist, {})
+vim.keymap.set("n", "<leader>sf", vim.diagnostic.show, {})
+vim.keymap.set("n", "<leader>hf", vim.diagnostic.hide, {})
 vim.keymap.set("n", "[f", vim.diagnostic.goto_prev, {})
 vim.keymap.set("n", "]f", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "ff", vim.lsp.buf.format, {})
