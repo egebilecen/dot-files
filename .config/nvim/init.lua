@@ -1,3 +1,4 @@
+-- Be sure to install "stylua" through `:Mason`!
 require("vim-config")
 
 -- Package Manager
