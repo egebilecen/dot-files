@@ -1,2 +1,3 @@
 #!/bin/bash
 cp -r ~/.config/nvim/ ~/dot-files/.config/
+cp ~/.tmux.conf ~/dot-files/.tmux.conf
