@@ -30,8 +30,8 @@ if vim.lsp.inlay_hint then
 end
 
 -- File Tree
-vim.keymap.set("n", "<leader>b", ":Neotree filesystem reveal left<CR>")
-vim.keymap.set("n", "<leader>B", ":Neotree close<CR>")
+vim.keymap.set("n", "<leader>b", ":Neotree filesystem reveal left<CR>", { silent = true })
+vim.keymap.set("n", "<leader>B", ":Neotree close<CR>", { silent = true })
 
 -- Fuzzy Finder
 local telescope = {
