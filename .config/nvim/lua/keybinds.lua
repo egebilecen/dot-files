@@ -1,4 +1,4 @@
--- Code Completion
+-- Code Completion:
 -- code-completion.lua
 --[[
     <C-b> Scroll the docs down
@@ -56,3 +56,26 @@ vim.keymap.set("n", "<F5>", dap.continue, {})
 vim.keymap.set("n", "<F10>", dap.step_over, {})
 vim.keymap.set("n", "<F11>", dap.step_into, {})
 vim.keymap.set("n", "<F12>", dap.step_out, {})
+
+-- File Tabs
+vim.keymap.set("n", "<A-.>", ":BufferPrevious<CR>", { silent = true })
+vim.keymap.set("n", "<A-,>", ":BufferNext<CR>", { silent = true })
+vim.keymap.set("n", "<A-x>", ":BufferClose<CR>", { silent = true })
+vim.keymap.set("n", "<A-X>", ":BufferRestore<CR>", { silent = true })
+vim.keymap.set("n", "<A-p>", ":BufferPin<CR>", { silent = true })
+
+-- Custom
+vim.keymap.set({ "n", "v" }, "<A-d>", "$")
+vim.keymap.set({ "n", "v" }, "<A-a>", "^")
+vim.keymap.set("i", "<A-d>", "<esc>$a")
+vim.keymap.set("i", "<A-a>", "<esc>^i")
+
+vim.keymap.set("n", "<A-j>", "10<C-e>")
+vim.keymap.set("n", "<A-k>", "10<C-y>")
+
+vim.keymap.set("n", "<A-q>", "<C-o>")
+vim.keymap.set("n", "<A-e>", "<C-i>")
+
+vim.keymap.set("n", "DD", '"_dd')
+vim.keymap.set("n", "DW", '"_dw')
+vim.keymap.set("n", "DB", '"_db')
