@@ -6,7 +6,8 @@
     <C-e> Abort the selection
     <CR>  Confirm the selection
     <TAB> Confirm the selection
-]]--
+]]
+--
 
 -- LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -24,9 +25,9 @@ vim.keymap.set("n", "]f", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "ff", vim.lsp.buf.format, {})
 
 if vim.lsp.inlay_hint then
-	vim.keymap.set("n", "<leader>ih", function()
-		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-	end, {})
+    vim.keymap.set("n", "<leader>ih", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, {})
 end
 
 -- File Tree
@@ -35,7 +36,7 @@ vim.keymap.set("n", "<leader>B", ":Neotree close<CR>", { silent = true })
 
 -- Fuzzy Finder
 local telescope = {
-	builtin = require("telescope.builtin"),
+    builtin = require("telescope.builtin"),
 }
 
 vim.keymap.set("n", "<leader>p", telescope.builtin.find_files, {})
@@ -44,7 +45,7 @@ vim.keymap.set("n", "<leader>p", telescope.builtin.find_files, {})
 vim.keymap.set("n", "<leader>g", telescope.builtin.live_grep, {})
 
 -- Git
-vim.keymap.set("n", "<leader>vh", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>vh", ":Gitsigns preview_hunk<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vg", ":Git ", {})
 
 -- DAP
