@@ -3,17 +3,22 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set relativenumber")
+
 vim.cmd("nmap <A-d> $")
 vim.cmd("vmap <A-d> $")
 vim.cmd("nmap <A-a> ^")
 vim.cmd("vmap <A-a> ^")
+
 vim.cmd("imap <A-d> <End>")
 vim.cmd("imap <A-a> <Home>")
+
 vim.cmd("nmap <A-j> 10<C-e>")
 vim.cmd("nmap <A-k> 10<C-y>")
 vim.cmd("nmap <A-q> <C-o>")
 vim.cmd("nmap <A-e> <C-i>")
+
 vim.cmd('nmap DD "_dd')
+
 -- vim.cmd("nmap <C-h> <C-w>h")
 -- vim.cmd("nmap <C-j> <C-w>j")
 -- vim.cmd("nmap <C-k> <C-w>k")
