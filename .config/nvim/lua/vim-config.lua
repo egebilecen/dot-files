@@ -18,6 +18,8 @@ vim.cmd("nmap <A-q> <C-o>")
 vim.cmd("nmap <A-e> <C-i>")
 
 vim.cmd('nmap DD "_dd')
+vim.cmd('nmap DW "_dw')
+vim.cmd('nmap DB "_db')
 
 -- vim.cmd("nmap <C-h> <C-w>h")
 -- vim.cmd("nmap <C-j> <C-w>j")
