@@ -18,7 +18,6 @@ return {
 				"jsonls",
 				"tsserver",
 				"lua_ls",
-				"autotools_ls",
 				"intelephense",
 				"pylsp",
 				"rust_analyzer",
