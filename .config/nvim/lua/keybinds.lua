@@ -3,6 +3,7 @@
 --[[
     <C-b> Scroll the docs down
     <C-f> Scroll the docs up
+    <C-e> Abort the selection
     <CR>  Confirm the selection
     <TAB> Confirm the selection
 ]]--
