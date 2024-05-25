@@ -19,6 +19,12 @@ vim.cmd('nmap DD "_dd')
 -- vim.cmd("nmap <C-k> <C-w>k")
 -- vim.cmd("nmap <C-l> <C-w>l")
 
+vim.cmd("nmap <silent> <A-.> <Cmd>BufferPrevious<CR>")
+vim.cmd("nmap <silent> <A-,> <Cmd>BufferNext<CR>")
+vim.cmd("nmap <silent> <A-x> <Cmd>BufferClose<CR>")
+vim.cmd("nmap <silent> <A-X> <Cmd>BufferRestore<CR>")
+vim.cmd("nmap <silent> <A-p> <Cmd>BufferPin<CR>")
+
 -- Need to install "xclip" package.
 vim.cmd("set clipboard+=unnamedplus")
 
