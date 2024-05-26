@@ -58,8 +58,8 @@ vim.keymap.set("n", "<F11>", dap.step_into, {})
 vim.keymap.set("n", "<F12>", dap.step_out, {})
 
 -- File Tabs
-vim.keymap.set("n", "<A-.>", ":BufferPrevious<CR>", { silent = true })
-vim.keymap.set("n", "<A-,>", ":BufferNext<CR>", { silent = true })
+vim.keymap.set("n", "<A-h>", ":BufferPrevious<CR>", { silent = true })
+vim.keymap.set("n", "<A-l>", ":BufferNext<CR>", { silent = true })
 vim.keymap.set("n", "<A-x>", ":BufferClose<CR>", { silent = true })
 vim.keymap.set("n", "<A-X>", ":BufferRestore<CR>", { silent = true })
 vim.keymap.set("n", "<A-p>", ":BufferPin<CR>", { silent = true })
