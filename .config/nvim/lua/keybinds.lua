@@ -89,3 +89,6 @@ vim.keymap.set("n", "<A-e>", "<C-i>")
 vim.keymap.set("n", "DD", '"_dd')
 vim.keymap.set("n", "DW", '"_dw')
 vim.keymap.set("n", "DB", '"_db')
+
+vim.keymap.set("n", "<leader>|", "<C-w>v");
+vim.keymap.set("n", "<leader>-", "<C-w>s");
