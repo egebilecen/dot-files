@@ -23,5 +23,6 @@ return {
 		lspconfig.pylsp.setup(common_config)
 		lspconfig.rust_analyzer.setup(common_config)
 		lspconfig.yamlls.setup(common_config)
+		lspconfig.html.setup(common_config)
 	end,
 }

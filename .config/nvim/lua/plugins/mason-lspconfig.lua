@@ -22,6 +22,7 @@ return {
 				"pylsp",
 				"rust_analyzer",
 				"yamlls",
+				"html",
 			},
 		})
 	end,
