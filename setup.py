@@ -11,7 +11,8 @@ PACKAGES = []
 BASHRC_COMMANDS.append("""
 # Start a tmux session automatically.
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux -u new -s 
+    cd ~/
+    exec tmux -u new -s 
 fi
 """)
 # End tmux
@@ -22,7 +23,7 @@ PACKAGES.append("tmuxp")
 # End Packages
 
 def exec_cmd(cmd: str) -> int:
-    proc = subprocess.Popen(cmd.split(), stderr = subprocess.STDOUT, stdout = subprocess.DEVNULL)
+    proc = subprocess.Popen(cmd.split(), stderr=subprocess.STDOUT, stdout=subprocess.DEVNULL)
     proc.wait()
     return proc.returncode
 
