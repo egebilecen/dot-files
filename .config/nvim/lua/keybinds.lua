@@ -94,3 +94,5 @@ vim.keymap.set("n", "DB", '"_db')
 
 vim.keymap.set("n", "<leader>|", "<C-w>v");
 vim.keymap.set("n", "<leader>-", "<C-w>s");
+
+vim.keymap.set("n", "<leader>n", ":noh<CR>", { silent = true })
