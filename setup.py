@@ -49,7 +49,7 @@ def main():
 
     # Install Packages
     for package in PACKAGES:
-        res = exec_cmd("apt install {}".format(package))
+        res = exec_cmd("apt install {} -y".format(package))
 
         if res != 0:
             print("[!] - Failed to install package `{}`.".format(package))
