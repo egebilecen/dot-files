@@ -23,6 +23,7 @@ return {
 				"rust_analyzer",
 				"yamlls",
 				"html",
+				"emmet_language_server",
 			},
 		})
 	end,

@@ -24,5 +24,6 @@ return {
 		lspconfig.rust_analyzer.setup(common_config)
 		lspconfig.yamlls.setup(common_config)
 		lspconfig.html.setup(common_config)
+		lspconfig.emmet_language_server.setup(common_config)
 	end,
 }
