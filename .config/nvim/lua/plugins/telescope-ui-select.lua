@@ -1,5 +1,5 @@
 -- Telescope Extension
--- Sets Vim's select use Telescope's picker.
+-- Sets Vim's select to use Telescope's picker.
 return {
 	"nvim-telescope/telescope-ui-select.nvim",
 	config = function()
