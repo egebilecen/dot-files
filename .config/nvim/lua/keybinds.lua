@@ -26,9 +26,9 @@ vim.keymap.set("n", "]f", vim.diagnostic.goto_next, {})
 vim.keymap.set("n", "ff", vim.lsp.buf.format, {})
 
 if vim.lsp.inlay_hint then
-    vim.keymap.set("n", "<leader>ih", function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-    end, {})
+	vim.keymap.set("n", "<leader>ih", function()
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+	end, {})
 end
 
 -- File Tree
@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>B", ":Neotree close<CR>", { silent = true })
 
 -- Fuzzy Finder
 local telescope = {
-    builtin = require("telescope.builtin"),
+	builtin = require("telescope.builtin"),
 }
 
 vim.keymap.set("n", "<leader>p", telescope.builtin.find_files, {})
@@ -51,8 +51,19 @@ vim.keymap.set("n", "<leader>vg", ":Git ", {})
 
 -- DAP
 local dap = require("dap")
+local dapui = require("dapui")
 
 vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, {})
+vim.keymap.set("n", "<leader>dc", dap.run_to_cursor, {})
+vim.keymap.set("n", "<leader>dq", function()
+	KEYS("<leader>B")
+	dapui.close()
+	KEYS("<leader>b")
+	KEYS("<A-l>")
+end, {})
+vim.keymap.set("n", "<leader>?", function()
+	dapui.eval(nil, { enter = true })
+end, {})
 vim.keymap.set("n", "<F5>", dap.continue, {})
 vim.keymap.set("n", "<F10>", dap.step_over, {})
 vim.keymap.set("n", "<F11>", dap.step_into, {})
@@ -93,7 +104,7 @@ vim.keymap.set("n", "DD", '"_dd')
 vim.keymap.set("n", "DW", '"_dw')
 vim.keymap.set("n", "DB", '"_db')
 
-vim.keymap.set("n", "<leader>|", "<C-w>v");
-vim.keymap.set("n", "<leader>-", "<C-w>s");
+vim.keymap.set("n", "<leader>|", "<C-w>v")
+vim.keymap.set("n", "<leader>-", "<C-w>s")
 
 vim.keymap.set("n", "<leader>n", ":noh<CR>", { silent = true })
