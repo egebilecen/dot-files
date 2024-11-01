@@ -19,5 +19,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- End Package Manager
 
+local function replace_termcodes(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+function KEYS(str)
+	vim.api.nvim_feedkeys(replace_termcodes(str), "m", true)
+end
+
 require("lazy").setup("plugins")
 require("keybinds")
