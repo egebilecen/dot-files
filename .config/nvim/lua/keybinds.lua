@@ -94,8 +94,8 @@ vim.keymap.set("i", "<A-a>", "<esc>^i")
 
 vim.keymap.set("n", "<A-j>", "10<C-e>")
 vim.keymap.set("n", "<A-k>", "10<C-y>")
-vim.keymap.set("n", "<C-k>", "<C-b>")
-vim.keymap.set("n", "<C-j>", "<C-f>")
+vim.keymap.set("n", "<C-b>", "<C-f>")
+vim.keymap.set("n", "<C-f>", "<C-b>")
 
 vim.keymap.set("n", "<A-q>", "<C-o>")
 vim.keymap.set("n", "<A-e>", "<C-i>")
