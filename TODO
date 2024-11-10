@@ -1,0 +1,3 @@
+[NVIM]
+* Automatically enable "inlay hints" if it is supported.
+* Look for a way to disable NVIM and/or plugin errors popping up and asking for a key press to continue. I think there is a plugin for this where these errors are shown as notification located on top right of the screen.
