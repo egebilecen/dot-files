@@ -16,3 +16,6 @@ vim.cmd("set clipboard+=unnamedplus")
 -- Globals
 vim.g.mapleader = " "
 vim.g.better_escape_shortcut = "jj"
+
+-- Other
+vim.opt.termguicolors = true

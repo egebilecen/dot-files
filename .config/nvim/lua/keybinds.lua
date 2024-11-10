@@ -45,6 +45,15 @@ vim.keymap.set("n", "<leader>p", telescope.builtin.find_files, {})
 ---- Need to install "ripgrep" packet for it to work. E.g. `apt install ripgrep`.
 vim.keymap.set("n", "<leader>g", telescope.builtin.live_grep, {})
 
+-- Noice
+vim.keymap.set("n", "<leader>nl", function ()
+	require("noice").cmd("last")
+end, {})
+
+vim.keymap.set("n", "<leader>nh", function ()
+	require("noice").cmd("history")
+end, {})
+
 -- Git
 vim.keymap.set("n", "<leader>vh", ":Gitsigns preview_hunk<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vg", ":Git ", {})
@@ -107,4 +116,4 @@ vim.keymap.set("n", "DB", '"_db')
 vim.keymap.set("n", "<leader>|", "<C-w>v")
 vim.keymap.set("n", "<leader>-", "<C-w>s")
 
-vim.keymap.set("n", "<leader>n", ":noh<CR>", { silent = true })
+vim.keymap.set("", "<ESC>", "<ESC>:noh<CR>:lua require('notify').dismiss()<CR>", { silent = true })
