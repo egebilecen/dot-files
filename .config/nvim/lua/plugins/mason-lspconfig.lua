@@ -16,7 +16,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"jsonls",
-				"tsserver",
+				"ts_ls",
 				"lua_ls",
 				"intelephense",
 				"pylsp",
