@@ -2,7 +2,8 @@ return {
 	"jay-babu/mason-nvim-dap.nvim",
 	config = function()
 		require("mason-nvim-dap").setup({
-			handlers = {}
+			ensure_installed = { "cppdbg", "python" },
+			handlers = {},
 		})
 	end,
 }
