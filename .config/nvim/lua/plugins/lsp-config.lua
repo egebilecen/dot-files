@@ -5,7 +5,11 @@ return {
 		local caps = require("cmp_nvim_lsp").default_capabilities()
 		local lspconfig = require("lspconfig")
 
-		local on_attach = function(client, bufnr) end
+		local on_attach = function(client, bufnr)
+			if vim.lsp.inlay_hint then
+				vim.lsp.inlay_hint.enable(true)
+			end
+		end
 
 		local common_config = {
 			capabilities = caps,
