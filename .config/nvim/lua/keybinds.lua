@@ -95,6 +95,14 @@ vim.keymap.set("n", "<A-8>", ":BufferGoto 8<CR>", { silent = true })
 vim.keymap.set("n", "<A-9>", ":BufferGoto 9<CR>", { silent = true })
 vim.keymap.set("n", "<A-0>", ":BufferLast<CR>", { silent = true })
 
+-- Session
+vim.keymap.set("n", "<leader>sr", ":SessionRestore<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sd", ":SessionDelete<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ss", ":SessionSearch<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sp", ":SessionPurgeOrphaned<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sS", ":Autosession search<CR>", { silent = true })
+vim.keymap.set("n", "<leader>sD", ":Autosession delete<CR>", { silent = true })
+
 -- Custom
 vim.keymap.set({ "n", "v" }, "<A-d>", "$")
 vim.keymap.set({ "n", "v" }, "<A-a>", "^")
