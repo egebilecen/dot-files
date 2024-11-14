@@ -182,6 +182,14 @@ return {
 		})
 
 		-- Add components to right sections
+		-- Auto Session - Session Name
+		ins_right({
+			function()
+				return require("auto-session.lib").current_session_name(true)
+			end,
+			color = { fg = colors.red, gui = "bold" },
+		})
+
 		ins_right({
 			"o:encoding", -- option component same as &encoding in viml
 			fmt = string.upper, -- I'm not sure why it's upper case either ;)
