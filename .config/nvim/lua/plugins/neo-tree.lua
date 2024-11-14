@@ -24,5 +24,11 @@ return {
 				},
 			},
 		})
+
+		-- require("neo-tree.events").subscribe({
+		-- 	event = "neo_tree_buffer_enter",
+		-- 	handler = function()
+		-- 	end,
+		-- })
 	end,
 }
