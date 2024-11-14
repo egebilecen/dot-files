@@ -9,6 +9,8 @@ return {
 			},
 		},
 		suppressed_dirs = { "~/", "~/Projects", "~/Downloads" },
+		bypass_save_filetypes = { "dashboard" },
+		cwd_change_handling = true,
 	},
 	config = function(_, opts)
 		require("auto-session").setup(opts)
