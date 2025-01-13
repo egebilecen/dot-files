@@ -1,13 +1,14 @@
 -- LSP Config
+-- Install following python packages:
+-- python3-pip
+-- python3-venv
+-- python3-neovim
+-- python3-pynvim
+
 return {
 	"williamboman/mason-lspconfig.nvim",
 	config = function()
 		require("mason-lspconfig").setup({
-			-- Install following python packages:
-			-- python3-pip
-			-- python3-venv
-			-- python3-neovim
-			-- python3-pynvim
 			ensure_installed = {
 				"clangd",
 				-- "csharp_ls",

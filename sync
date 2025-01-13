@@ -9,4 +9,4 @@ cp -r $DOT_CONFIG_PATH/nvim/ $DOT_FILES_PATH/.config/
 cp ~/.tmux.conf $DOT_FILES_PATH/.tmux.conf
 
 # pylsp Configuration
-cp $DOT_CONFIG_PATH/pycodestyle $DOT_FILES_PATH/pycodestyle
+cp $DOT_CONFIG_PATH/pycodestyle $DOT_FILES_PATH/.config/pycodestyle
