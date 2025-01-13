@@ -1,0 +1,29 @@
+{
+	"session_name": "Code Test",
+	"windows": [
+		{
+			"window_name" : "C++",
+			"start_directory": "~/Programming/C++/Test/",
+			"layout": "main-vertical",
+			"panes": [
+				"nvim main.cpp",
+				"ls"
+			],
+			"options": {
+				"main-pane-width": "60%"
+			}
+		},
+		{
+			"window_name" : "Python",
+			"start_directory": "~/Programming/Python/Test/",
+			"layout": "main-vertical",
+			"panes": [
+				"nvim main.py",
+				"ls"
+			],
+			"options": {
+				"main-pane-width": "60%"
+			}
+		}
+	]
+}
