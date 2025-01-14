@@ -19,7 +19,6 @@ return {
 				"jsonls",
 				"ts_ls",
 				"lua_ls",
-				"intelephense",
 				"pylsp",
 				"rust_analyzer",
 				"yamlls",

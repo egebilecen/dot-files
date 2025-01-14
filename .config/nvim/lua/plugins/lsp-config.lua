@@ -23,7 +23,6 @@ return {
 		lspconfig.jsonls.setup(common_config)
 		lspconfig.ts_ls.setup(common_config)
 		lspconfig.lua_ls.setup(common_config)
-		lspconfig.intelephense.setup(common_config)
 		lspconfig.pylsp.setup(common_config)
 		lspconfig.rust_analyzer.setup(common_config)
 		lspconfig.yamlls.setup(common_config)
