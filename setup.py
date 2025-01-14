@@ -31,15 +31,22 @@ APT_PACKAGES.append("python3-pynvim")
 
 ## TMUX Package Manager
 SHELL_COMMANDS.append("""
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-""")
+git clone https://github.com/tmux-plugins/tpm {tpm_path}
+""".format(tpm_path=os.path.expanduser("~/.tmux/plugins/tpm")))
 ## End TMUX Package Manager
 
 ## NeoVim
 SHELL_COMMANDS.append("""
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+
+rm -rf /opt/nvim
+tar -C /opt -xzf nvim-linux64.tar.gz
+mv /opt/nvim-linux64 /opt/nvim
+
+rm nvim-linux64.tar.gz
+
+rm /usr/bin/nvim
+ln -s /opt/nvim/bin/nvim /usr/bin/
 """)
 ## End NeoVim
 # End Shell Commands to Run
@@ -54,10 +61,6 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 """)
 ## End tmux
-
-## NeoVim
-BASHRC_COMMANDS.append("export PATH=\"$PATH:/opt/nvim-linux64/bin\"")
-## End NeoVim
 # End .bashrc Commands
 
 def exec_cmd(cmd: str) -> int:
@@ -72,17 +75,19 @@ def main():
 
     # Install APT Packages
     for package in APT_PACKAGES:
-        print("[?] - Installing the package `{}`".format(package))
+        print("[?] - Installing package `{}`...".format(package))
         res = exec_cmd("apt install {} -y".format(package))
 
         if res != 0:
-            print("[-] - Failed to install the package `{}`.".format(package))
+            print("[-] - Failed to install the package `{}`!".format(package))
         else:
             print("[+] - If it's not installed already, successfully installed the package `{}`.".format(package))
         print()
     # End Install APT Packages
 
     # Run Shell Commands
+    print("[?] - Running shell commands...")
+
     for shell_command_multiline in SHELL_COMMANDS:
         shell_commands = [cmd for cmd in shell_command_multiline.splitlines() if cmd]
 
@@ -90,11 +95,13 @@ def main():
             res = exec_cmd(shell_cmd)
 
             if res != 0:
-                print("[-] - Command result is not 0! Command: \"{}\", result: {}.".format(shell_cmd, res))
-                print()
+                print("[-] - \"{}\" command has failed! Result: {}.".format(shell_cmd, res))
+    print()
     # End Run Shell Commands
 
     # .bashrc Commands
+    print("[?] - Adding .bashrc commands...")
+
     _skipped = 0
     with open(BASHRC_PATH, "r+") as f:
         content = f.read()
