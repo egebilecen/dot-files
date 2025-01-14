@@ -19,6 +19,7 @@ BASHRC_COMMANDS = []
 # Packages
 APT_PACKAGES.append("tmux")
 APT_PACKAGES.append("tmuxp")
+APT_PACKAGES.append("lazygit")
 
 ## Following packages are for NeoVim (and plugins).
 APT_PACKAGES.append("wget")
