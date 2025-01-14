@@ -3,7 +3,14 @@ import os
 import sys
 import subprocess
 
-BASHRC_PATH = os.path.expanduser("~/.bashrc")
+USER = os.environ["SUDO_USER"] if "SUDO_USER" in os.environ else os.environ["USER"]
+
+if not USER:
+    print("[!] - Couldn't find the current user!")
+    sys.exit(1)
+
+HOME_DIR = "/root" if USER == "root" else "/home/{}".format(USER)
+BASHRC_PATH = HOME_DIR + "/.bashrc"
 
 APT_PACKAGES = []
 SHELL_COMMANDS = []
@@ -15,6 +22,7 @@ APT_PACKAGES.append("tmuxp")
 
 ## Following packages are for NeoVim (and plugins).
 APT_PACKAGES.append("wget")
+APT_PACKAGES.append("curl")
 APT_PACKAGES.append("unzip")
 APT_PACKAGES.append("make")
 APT_PACKAGES.append("cmake")
@@ -31,8 +39,8 @@ APT_PACKAGES.append("python3-pynvim")
 
 ## TMUX Package Manager
 SHELL_COMMANDS.append("""
-git clone https://github.com/tmux-plugins/tpm {tpm_path}
-""".format(tpm_path=os.path.expanduser("~/.tmux/plugins/tpm")))
+git clone https://github.com/tmux-plugins/tpm {home_dir}/.tmux/plugins/tpm
+""".format(home_dir=HOME_DIR))
 ## End TMUX Package Manager
 
 ## NeoVim
@@ -49,6 +57,14 @@ rm /usr/bin/nvim
 ln -s /opt/nvim/bin/nvim /usr/bin/
 """)
 ## End NeoVim
+
+## Copy Config Folders and Files
+SHELL_COMMANDS.append("""
+cp -r {home_dir}/dot-files/.config {home_dir}
+cp -r {home_dir}/dot-files/.workspaces {home_dir}
+cp {home_dir}/dot-files/.tmux.conf {home_dir}
+""".format(home_dir=HOME_DIR))
+## End Copy Config Folders and Files
 # End Shell Commands to Run
 
 # .bashrc Commands
@@ -119,6 +135,11 @@ def main():
     if _skipped > 0:
         print("[?] - {} .bashrc command(s) is/are skipped as they are already exist in the file.".format(_skipped))
     # End .bashrc Commands
+
+    # Notice messages
+    print()
+    print("[?] - If you are running the TMUX plugin manager for the first time, be sure to install plugins by pressing \"prefix + I\".")
+    # End Notice Messages
 
 if __name__ == "__main__":
     main()
