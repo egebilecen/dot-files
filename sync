@@ -1,12 +1,14 @@
 #!/bin/bash
-DOT_CONFIG_PATH=~/.config
 DOT_FILES_PATH=~/dot-files
 
-# NVIM
-cp -r $DOT_CONFIG_PATH/nvim/ $DOT_FILES_PATH/.config/
+# NeoVim Configuration
+cp -r ~/.config/nvim/ $DOT_FILES_PATH/.config/
 
-# tmux
-cp ~/.tmux.conf $DOT_FILES_PATH/.tmux.conf
+# tmux Configuration
+cp ~/.tmux.conf $DOT_FILES_PATH/
 
 # pylsp Configuration
-cp $DOT_CONFIG_PATH/pycodestyle $DOT_FILES_PATH/.config/pycodestyle
+cp ~/.config/pycodestyle $DOT_FILES_PATH/.config/
+
+# gdb Configuration
+cp ~/.gdbinit $DOT_FILES_PATH/
