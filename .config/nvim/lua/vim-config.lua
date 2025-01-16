@@ -4,6 +4,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
+vim.cmd("set linebreak")
 
 -- vim.cmd("nmap <C-h> <C-w>h")
 -- vim.cmd("nmap <C-j> <C-w>j")
