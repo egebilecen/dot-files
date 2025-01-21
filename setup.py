@@ -60,6 +60,16 @@ ln -s /opt/nvim/bin/nvim /usr/bin/
 """)
 ## End NeoVim
 
+## StyLua
+SHELL_COMMANDS.append("""
+wget https://github.com/JohnnyMorganz/StyLua/releases/latest/download/stylua-linux-x86_64.zip
+unzip stylua-linux-x86_64.zip
+
+rm stylua-linux-x86_64.zip
+mv stylua /usr/bin
+""")
+## End StyLua
+
 ## Copy Config Folders and Files
 SHELL_COMMANDS.append("""
 cp -r {home_dir}/dot-files/.config {home_dir}
