@@ -5,7 +5,7 @@ passthrough_unbounded_keys = true
 enabled = true
 
 [hotkeys]
-"Primary+Shift+C" = "recursive_grid"
+"Primary+Shift+C" = "recursive_grid --cursor-selection-mode hold"
 "Primary+Shift+S" = "scroll"
 "Primary+Shift+Space" = "monitor_select"
 "Primary+Shift+G" = "__disabled__"
@@ -19,7 +19,7 @@ grid_rows = 5
 keys = "yuiophjkl;nm,./asdfgzxcvb"
 min_size_width = 1
 min_size_height = 1
-max_depth = 3
+max_depth = 20
 
 [recursive_grid.animation]
 enabled = true
@@ -35,6 +35,7 @@ duration_ms = 50
 "Enter" = ["action right_click", "action reset"]
 "Primary+Enter" = "action right_click"
 "Shift+M" = ["action middle_click", "action reset"]
+"Shift+D" = "action move_mouse"
 "Shift+I" = ["action left_click --state down", "action reset"]
 "Shift+U" = ["action left_click --state up", "action reset"]
 "Up" = "action move_mouse_relative --dx=0 --dy=-10"
