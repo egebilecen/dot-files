@@ -1,0 +1,155 @@
+[general]
+passthrough_unbounded_keys = true
+
+[sticky_modifiers]
+enabled = false
+
+[hotkeys]
+"Primary+Shift+C" = "recursive_grid"
+"Primary+Shift+S" = "scroll"
+"Primary+Shift+Space" = "monitor_select"
+"Primary+Shift+G" = "__disabled__"
+"Primary+Shift+B" = "__disabled__"
+
+[recursive_grid]
+enabled = true
+capture_scope = "screen"
+grid_cols = 5
+grid_rows = 5
+keys = "yuiophjkl;nm,./asdfgzxcvb"
+min_size_width = 1
+min_size_height = 1
+max_depth = 3
+
+[recursive_grid.animation]
+enabled = true
+duration_ms = 50
+
+[recursive_grid.hotkeys]
+"Escape" = "idle"
+"`" = "toggle-cursor-follow-selection"
+"Space" = "action reset"
+"Backspace" = "action backspace"
+"Shift+L" = ["action left_click", "action reset"]
+"Shift+R" = ["action right_click", "action reset"]
+"Shift+M" = ["action middle_click", "action reset"]
+"Shift+I" = ["action left_click --state down", "action reset"]
+"Shift+U" = ["action left_click --state up", "action reset"]
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+"Primary+k" = "action scroll_up"
+"Primary+j" = "action scroll_down"
+
+[recursive_grid.ui]
+line_width = 1
+line_color = "#545454"
+font_size = 16
+font_family = ""
+highlight_color="#00000000"
+text_color="#F43F5E"
+min_font_size = 6
+label_autohide_multiplier = 1
+sub_key_preview = true
+sub_key_preview_font_size = 16
+sub_key_preview_autohide_multiplier = 1
+sub_key_preview_text_color = "#14B8A6"
+
+[virtual_pointer.ui]
+char = "●"
+font_size = 8
+font_family = ""
+text_color = "#FFFFFF"
+
+[mouse_action_indicator]
+enabled = true
+actions = [
+  "left_click",
+  "right_click",
+  "middle_click",
+  "left_mouse_down",
+  "left_mouse_up",
+  "right_mouse_down",
+  "right_mouse_up",
+  "middle_mouse_down",
+  "middle_mouse_up",
+  "left_mouse_toggle",
+  "right_mouse_toggle",
+  "middle_mouse_toggle",
+]
+
+[mouse_action_indicator.ui]
+size = 36
+border_width = 2
+shape = "circle"
+
+[mouse_action_indicator.animation]
+duration_ms = 260
+start_scale = 0.55
+end_scale = 1.35
+start_opacity = 0.85
+end_opacity = 0.0
+easing = "ease_out"
+
+[monitor_select]
+enabled = true
+characters = "123456789"
+
+[monitor_select.ui]
+font_size = 96
+font_family = ""
+subtitle_font_size = 18
+subtitle_font_family = ""
+border_radius = -1
+padding_x = -1
+padding_y = -1
+border_width = 0
+backdrop_color = ""
+
+[monitor_select.hotkeys]
+"Escape" = "idle"
+
+[scroll]
+scroll_step = 50
+scroll_step_half = 500
+scroll_step_full = 1000000
+invert_scroll = false
+
+[scroll.hotkeys]
+"Escape" = "idle"
+"k" = "action scroll_up"
+"j" = "action scroll_down"
+"h" = "action scroll_left"
+"l" = "action scroll_right"
+"gg" = "action go_top"
+"Shift+G" = "action go_bottom"
+"u" = "action page_up"
+"PageUp" = "action page_up"
+"d" = "action page_down"
+"PageDown" = "action page_down"
+"Shift+L" = "action left_click"
+"Shift+R" = "action right_click"
+"Shift+M" = "action middle_click"
+"Shift+I" = "action left_click --state down"
+"Shift+U" = "action left_click --state up"
+"Up" = "action move_mouse_relative --dx=0 --dy=-10"
+"Down" = "action move_mouse_relative --dx=0 --dy=10"
+"Left" = "action move_mouse_relative --dx=-10 --dy=0"
+"Right" = "action move_mouse_relative --dx=10 --dy=0"
+
+[mode_indicator.scroll]
+enabled = true
+text = "Scroll"
+
+[mode_indicator.recursive_grid]
+enabled = false
+text = "Recursive Grid"
+
+[mode_indicator.monitor_select]
+enabled = false
+text = "Monitor Select"
+
+[systray]
+enabled = true
+
