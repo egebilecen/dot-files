@@ -2,7 +2,7 @@
 passthrough_unbounded_keys = true
 
 [sticky_modifiers]
-enabled = false
+enabled = true
 
 [hotkeys]
 "Primary+Shift+C" = "recursive_grid"
@@ -28,10 +28,12 @@ duration_ms = 50
 [recursive_grid.hotkeys]
 "Escape" = "idle"
 "`" = "toggle-cursor-follow-selection"
-"Space" = "action reset"
+"Tab" = "action reset"
 "Backspace" = "action backspace"
-"Shift+L" = ["action left_click", "action reset"]
-"Shift+R" = ["action right_click", "action reset"]
+"Space" = ["action left_click", "action reset"]
+"Primary+Space" = "action left_click"
+"Enter" = ["action right_click", "action reset"]
+"Primary+Enter" = "action right_click"
 "Shift+M" = ["action middle_click", "action reset"]
 "Shift+I" = ["action left_click --state down", "action reset"]
 "Shift+U" = ["action left_click --state up", "action reset"]
