@@ -16,7 +16,6 @@ enabled = true
 capture_scope = "screen"
 grid_cols = 5
 grid_rows = 5
-#keys = "yuiophjkl;nm,./asdfgzxcvb"
 keys = "qwertasdfgzxcvbyuiophjkl;"
 min_size_width = 1
 min_size_height = 1
@@ -27,6 +26,7 @@ enabled = true
 duration_ms = 50
 
 [recursive_grid.hotkeys]
+"Shift+Primary+C" = ["action move_monitor", "recursive_grid --cursor-selection-mode hold"]
 "Escape" = "idle"
 "`" = "toggle-cursor-follow-selection"
 "Tab" = "action reset"
