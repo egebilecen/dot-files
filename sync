@@ -2,7 +2,11 @@
 DOT_FILES_PATH=~/dot-files
 
 # NeoVim Configuration
-cp -r ~/.config/nvim/ $DOT_FILES_PATH/.config/
+cp -r ~/.config/nvim $DOT_FILES_PATH/.config/
+
+# Fish Shell Configuration
+cp ~/.config/fish/config.fish $DOT_FILES_PATH/.config/fish/
+cp -r ~/.config/fish/functions $DOT_FILES_PATH/.config/fish/
 
 # tmux Configuration
 cp ~/.tmux.conf $DOT_FILES_PATH/

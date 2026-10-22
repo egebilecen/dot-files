@@ -1,3 +1,3 @@
 return {
-	"olrtg/nvim-emmet",
+    "olrtg/nvim-emmet",
 }

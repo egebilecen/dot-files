@@ -1,10 +1,11 @@
--- vim.cmd("set expandtab")
+vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set relativenumber")
 vim.cmd("set cursorline")
 vim.cmd("set linebreak")
+vim.cmd("set colorcolumn=80")
 
 -- vim.cmd("nmap <C-h> <C-w>h")
 -- vim.cmd("nmap <C-j> <C-w>j")
@@ -20,13 +21,19 @@ vim.g.better_escape_shortcut = "jj"
 
 -- Other
 vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "→ ",
+  space = " ",
+  trail = "•",
+}
 
 vim.api.nvim_set_var("do_filetype_lua", 1)
 vim.filetype.add({
-	extension = {
-		nss = "nwscript",
-	},
-	pattern = {
-		[".*%.nss$"] = "nwscript",
-	},
+    extension = {
+        nss = "nwscript",
+    },
+    pattern = {
+        [".*%.nss$"] = "nwscript",
+    },
 })
