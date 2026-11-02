@@ -1,6 +1,10 @@
 set -U fish_greeting ""
 
+# MacOS
+fish_add_path /opt/homebrew/bin
+
 alias c="clear"
+alias l="ls"
 alias ll="ls -lah"
 alias vi="nvim"
 
