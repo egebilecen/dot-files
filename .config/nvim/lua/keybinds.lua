@@ -14,7 +14,7 @@ local telescope = {
 --
 
 -- LSP
-vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, { desc = "LSP: Format code" })
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "LSP: Format code" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover" })
 vim.keymap.set("n", "gd", telescope.builtin.lsp_definitions, { desc = "LSP: Go to definition" })
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP: Go to declaration" })
@@ -28,8 +28,8 @@ vim.keymap.set("n", "<leader>lD", telescope.builtin.diagnostics, { desc = "LSP: 
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP: Rename" })
 vim.keymap.set("n", "<C-Space>", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
-vim.keymap.set("n", "<leader>f", vim.diagnostic.open_float, { desc = "Diagnostic: Show float" })
-vim.keymap.set("n", "<leader>F", vim.diagnostic.setqflist, { desc = "Diagnostic: Send to quickfix" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Diagnostic: Show float" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { desc = "Diagnostic: Send to quickfix" })
 vim.keymap.set("n", "<leader>sf", vim.diagnostic.show, { desc = "Diagnostic: Show" })
 vim.keymap.set("n", "<leader>hf", vim.diagnostic.hide, { desc = "Diagnostic: Hide" })
 vim.keymap.set("n", "[f", function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = "Diagnostic: Previous" })
@@ -337,4 +337,24 @@ vim.keymap.set("n", "<leader>cL", function()
         print("Cscope: linked cscope.out -> " .. link)
     end
 end, { desc = "Cscope: symlink bedrock cscope.out into cwd" })
+
+-- LSP restart command
+vim.api.nvim_create_user_command('LspRestart', function()
+  -- Get all active clients across the entire Neovim instance
+  local clients = vim.lsp.get_clients()
+  if #clients == 0 then
+    print("No active LSP clients found.")
+    return
+  end
+
+  for _, client in ipairs(clients) do
+    client:stop(true)
+  end
+
+  -- Wait a moment, then reload all open file buffers to trigger re-attachment
+  vim.defer_fn(function()
+    vim.cmd('bufdo e!')
+    print("All LSP clients restarted.")
+  end, 500)
+end, { desc = 'Restart all active LSP clients globally and reload buffers' })
 
