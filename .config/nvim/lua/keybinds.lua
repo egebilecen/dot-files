@@ -67,7 +67,8 @@ if vim.lsp.inlay_hint then
 end
 
 -- File Tree
-vim.keymap.set("n", "<leader>b", ":Texplore<CR>", { silent = true, desc = "File tree in new tab" })
+vim.keymap.set("n", "<leader>b", ":Explore<CR>", { silent = true, desc = "File tree" })
+vim.keymap.set("n", "<leader>B", ":Texplore<CR>", { silent = true, desc = "File tree in new tab" })
 
 -- Fuzzy Finder
 local telescope = {
