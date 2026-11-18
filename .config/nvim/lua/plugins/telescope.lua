@@ -7,7 +7,14 @@ return {
             pickers = {
                 find_files = {
                     -- Arguments: https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md
-                    find_command = { "rg", "--no-ignore", "--files", "--hidden", "-g", "!.git" },
+                    find_command = {
+                        "rg",
+                        "--no-ignore",
+                        "--files",
+                        "--hidden",
+                        "-g", "!.git",
+                        "-g", "!**/target"
+                    },
                 },
             },
         })
